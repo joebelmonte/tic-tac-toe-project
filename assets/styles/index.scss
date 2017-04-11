@@ -1,2 +1,33 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+// body {
+//   margin: auto;
+// }
+
+#board {
+  margin: auto;
+  padding: 50px;
+  font-size: 100px;
+  text-align: center;
+  table {
+    margin: auto;
+  }
+  // background-color: blue;
+}
+
+.square{
+    width: 200px;
+    height: 200px;
+    // padding: 20px;
+}
+
+.v{
+    border-left:5px solid #000;
+    border-right:5px solid #000;
+}
+
+.h{
+    border-top:5px solid #000;
+    border-bottom:5px solid #000;
+}

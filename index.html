@@ -14,7 +14,7 @@
 </head>
 
 <body class="container-fluid">
-  <h1>Example</h1>
+  <h1>Ultimate Tic Tac Toe!</h1>
   <form id="sign-up">
       <fieldset>
         <legend>Sign up!</legend>
@@ -49,8 +49,32 @@
         <input type="submit" name="submit" value="Sign out!">
       </fieldset>
     </form>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <br>
+    <form id="startGame">
+      <fieldset>
+        <legend>Start a new game!</legend>
+        <input type="submit" name="submit" value="Start a new game!">
+      </fieldset>
+    </form>
+    <div id="board">
+        <table>
+          <tr id="row1">
+            <td class="square zero">0</td>
+            <td class="square one v">1</td>
+            <td class="square two">2</td>
+          </tr>
+          <tr id="row2">
+            <td class="square three h">3</td>
+            <td class="square four v h">4</td>
+            <td class="square five h">5</td>
+          </tr>
+          <tr id="row3">
+            <td class="square six">6</td>
+            <td class="square seven v">7</td>
+            <td class="square eight">8</td>
+          </tr>
+        </table>
+      </div>
 </body>
 
 </html>
