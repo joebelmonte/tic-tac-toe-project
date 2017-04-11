@@ -20,10 +20,19 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
+const onChangePassword = function (event) {
+  event.preventDefault()
+  console.log('Change password event detected.')
+  const data = getFormFields(event.target)
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  // $('#change-password').on('submit', onChangePassword)
+  $('#change-password').on('submit', onChangePassword)
   // $('#signOut').on('submit', signOut)
 }
 
