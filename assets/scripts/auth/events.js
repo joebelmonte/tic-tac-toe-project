@@ -72,6 +72,48 @@ const gamePlay1 = function () {
   gamePlay(1)
 }
 
+const gamePlay2 = function () {
+  console.log('Calling gamePlay 2 function')
+  console.log('The current active player is: ', activePlayer)
+  gamePlay(2)
+}
+
+const gamePlay3 = function () {
+  console.log('Calling gamePlay 3 function')
+  console.log('The current active player is: ', activePlayer)
+  gamePlay(3)
+}
+
+const gamePlay4 = function () {
+  console.log('Calling gamePlay 4 function')
+  console.log('The current active player is: ', activePlayer)
+  gamePlay(4)
+}
+
+const gamePlay5 = function () {
+  console.log('Calling gamePlay 5 function')
+  console.log('The current active player is: ', activePlayer)
+  gamePlay(5)
+}
+
+const gamePlay6 = function () {
+  console.log('Calling gamePlay 6 function')
+  console.log('The current active player is: ', activePlayer)
+  gamePlay(6)
+}
+
+const gamePlay7 = function () {
+  console.log('Calling gamePlay 7 function')
+  console.log('The current active player is: ', activePlayer)
+  gamePlay(7)
+}
+
+const gamePlay8 = function () {
+  console.log('Calling gamePlay 8 function')
+  console.log('The current active player is: ', activePlayer)
+  gamePlay(8)
+}
+
 const gamePlay = function (square) {
   // event.preventDefault()
   console.log('Game play was initialized and the event is: ', event)
@@ -98,9 +140,13 @@ const addHandlers = () => {
   $('#startGame').on('submit', startGame)
   $('.zero').on('click', gamePlay0)
   $('.one').on('click', gamePlay1)
-  // $('.zero').on('click', gamePlay0)
-  // $('.zero').on('click', gamePlay0)
-  // $('.zero').on('click', gamePlay0)
+  $('.two').on('click', gamePlay2)
+  $('.three').on('click', gamePlay3)
+  $('.four').on('click', gamePlay4)
+  $('.five').on('click', gamePlay5)
+  $('.six').on('click', gamePlay6)
+  $('.seven').on('click', gamePlay7)
+  $('.eight').on('click', gamePlay8)
 }
 
 module.exports = {
