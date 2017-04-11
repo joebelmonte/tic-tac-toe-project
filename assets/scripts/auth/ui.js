@@ -1,6 +1,6 @@
 'use strict'
 
-// const store = require('../store.js')
+const store = require('../store.js')
 
 const signUpSuccess = (data) => {
   console.log('Successful sign up!')
@@ -12,11 +12,23 @@ const signUpFailure = (error) => {
   console.error(error)
 }
 
+const signInSuccess = (data) => {
+  console.log('Sign in successful!')
+  console.log(data)
+  store.user = data.user
+  console.log('Logging store.user here = ' + store.user)
+}
+
+const signInFailure = (error) => {
+  console.log('Incorrect password - Sign in failure!')
+  console.error(error)
+}
+
 module.exports = {
   signUpSuccess,
-  signUpFailure
-  // signInSuccess,
-  // signInFailure,
+  signUpFailure,
+  signInSuccess,
+  signInFailure
   // changePasswordSuccess,
   // changePasswordFailure,
   // signOutSuccess,
