@@ -7,6 +7,6 @@ curl --include --request PATCH "http://localhost:4741/games/$ID" \
         "index": 0,
         "value": "x"
       },
-      "over": false
+      "over": true
     }
   }'

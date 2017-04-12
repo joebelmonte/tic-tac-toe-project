@@ -13,6 +13,7 @@ const startGame = function () {
   gameBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0]
   activePlayer = 1
   tieCheck = []
+  api.postGame()
   document.getElementsByClassName('status')[0].innerHTML = 'Current move: Player 1'
   document.getElementsByClassName('zero')[0].innerHTML = ''
   document.getElementsByClassName('one')[0].innerHTML = ''
