@@ -2,6 +2,7 @@
 
 const config = require('../config.js')
 const store = require('../store.js')
+const events = require('./events.js')
 
 const signUp = (data) => {
   console.log('We are at the signUp function passing through the following data: ', data)
@@ -14,6 +15,7 @@ const signUp = (data) => {
 
 const signIn = (data) => {
   console.log('Signing in with data of ', data)
+  console.log('testing gameBoard access: ', events.gameBoard)
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
@@ -55,10 +57,24 @@ const postGame = () => {
   })
 }
 
+const patchGame = (forPatch) => {
+  console.log('inside patchGame')
+  console.log('forPatch is equal to: ', forPatch)
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: forPatch
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  postGame
+  postGame,
+  patchGame
 }

@@ -14,6 +14,8 @@ const startGame = function () {
   activePlayer = 1
   tieCheck = []
   api.postGame()
+    .then(ui.postGameSuccess)
+    .catch(ui.postGameFailure)
   document.getElementsByClassName('status')[0].innerHTML = 'Current move: Player 1'
   document.getElementsByClassName('zero')[0].innerHTML = ''
   document.getElementsByClassName('one')[0].innerHTML = ''
@@ -57,6 +59,7 @@ const checkWinner = function (gameBoard) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    // api.patchGame()
   }
   if (topRow === -3) {
     console.log('Player 2 is the winner!')
@@ -171,6 +174,7 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   const data = getFormFields(this)
   console.log('onSignIn ran!')
+  console.log('and the data is: ', data)
   event.preventDefault()
   api.signIn(data)
     .then(ui.signInSuccess)
@@ -202,8 +206,28 @@ const gamePlay0 = function () {
   if (gameBoard[0] === 0) {
     if (activePlayer === 1) {
       document.getElementsByClassName('zero')[0].innerHTML = 'X'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 0,
+            "value": "x"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     } else {
       document.getElementsByClassName('zero')[0].innerHTML = 'O'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 0,
+            "value": "o"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     }
   }
   gamePlay(0)
@@ -215,8 +239,28 @@ const gamePlay1 = function () {
   if (gameBoard[1] === 0) {
     if (activePlayer === 1) {
       document.getElementsByClassName('one')[0].innerHTML = 'X'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 1,
+            "value": "x"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     } else {
       document.getElementsByClassName('one')[0].innerHTML = 'O'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 1,
+            "value": "o"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     }
   }
   gamePlay(1)
@@ -228,8 +272,28 @@ const gamePlay2 = function () {
   if (gameBoard[2] === 0) {
     if (activePlayer === 1) {
       document.getElementsByClassName('two')[0].innerHTML = 'X'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 2,
+            "value": "x"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     } else {
       document.getElementsByClassName('two')[0].innerHTML = 'O'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 2,
+            "value": "o"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     }
   }
   gamePlay(2)
@@ -241,8 +305,28 @@ const gamePlay3 = function () {
   if (gameBoard[3] === 0) {
     if (activePlayer === 1) {
       document.getElementsByClassName('three')[0].innerHTML = 'X'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 3,
+            "value": "x"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     } else {
       document.getElementsByClassName('three')[0].innerHTML = 'O'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 3,
+            "value": "o"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     }
   }
   gamePlay(3)
@@ -254,8 +338,28 @@ const gamePlay4 = function () {
   if (gameBoard[4] === 0) {
     if (activePlayer === 1) {
       document.getElementsByClassName('four')[0].innerHTML = 'X'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 4,
+            "value": "x"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     } else {
       document.getElementsByClassName('four')[0].innerHTML = 'O'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 4,
+            "value": "o"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     }
   }
   gamePlay(4)
@@ -267,8 +371,28 @@ const gamePlay5 = function () {
   if (gameBoard[5] === 0) {
     if (activePlayer === 1) {
       document.getElementsByClassName('five')[0].innerHTML = 'X'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 5,
+            "value": "x"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     } else {
       document.getElementsByClassName('five')[0].innerHTML = 'O'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 5,
+            "value": "o"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     }
   }
   gamePlay(5)
@@ -280,8 +404,28 @@ const gamePlay6 = function () {
   if (gameBoard[6] === 0) {
     if (activePlayer === 1) {
       document.getElementsByClassName('six')[0].innerHTML = 'X'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 6,
+            "value": "x"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     } else {
       document.getElementsByClassName('six')[0].innerHTML = 'O'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 6,
+            "value": "o"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     }
   }
   gamePlay(6)
@@ -293,8 +437,28 @@ const gamePlay7 = function () {
   if (gameBoard[7] === 0) {
     if (activePlayer === 1) {
       document.getElementsByClassName('seven')[0].innerHTML = 'X'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 7,
+            "value": "x"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     } else {
       document.getElementsByClassName('seven')[0].innerHTML = 'O'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 7,
+            "value": "o"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     }
   }
   gamePlay(7)
@@ -306,8 +470,28 @@ const gamePlay8 = function () {
   if (gameBoard[8] === 0) {
     if (activePlayer === 1) {
       document.getElementsByClassName('eight')[0].innerHTML = 'X'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 8,
+            "value": "x"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     } else {
       document.getElementsByClassName('eight')[0].innerHTML = 'O'
+      const forPatch = {
+        "game": {
+          "cell": {
+            "index": 8,
+            "value": "o"
+          },
+          "over": false
+        }
+      }
+      api.patchGame(forPatch)
     }
   }
   gamePlay(8)
