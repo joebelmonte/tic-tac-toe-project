@@ -2,16 +2,19 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
-const checkwinner = require('./checkwinner')
+// const checkwinner = require('./checkwinner')
 
 let gameBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 let activePlayer = 1
+let tieCheck = []
 
 const startGame = function () {
   event.preventDefault()
   console.log('start game function initialized!')
   gameBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0]
   activePlayer = 1
+  tieCheck = []
+  document.getElementsByClassName('status')[0].innerHTML = 'Current move: Player 1'
   document.getElementsByClassName('zero')[0].innerHTML = ''
   document.getElementsByClassName('one')[0].innerHTML = ''
   document.getElementsByClassName('two')[0].innerHTML = ''
@@ -25,6 +28,127 @@ const startGame = function () {
   console.log(activePlayer)
 }
 
+const fillBoard = function (array) {
+  console.log('launching fillBoard')
+  console.log('the value of the array is: ', array)
+  console.log('the value of game board is:', gameBoard)
+  for (let i = 0; i < 9; i++) {
+    if (array[i] === 0) {
+      gameBoard[i] = 5
+      array[i] = 5
+    }
+  }
+  console.log('ending fillBoard')
+  console.log('the value of the array is: ', array)
+  console.log('the value of game board is:', gameBoard)
+}
+
+const checkWinner = function (gameBoard) {
+  console.log('Checking for a winner using game board: ', gameBoard)
+  const topRow = gameBoard[0] + gameBoard[1] + gameBoard[2]
+  const midRow = gameBoard[3] + gameBoard[4] + gameBoard[5]
+  const bottomRow = gameBoard[6] + gameBoard[7] + gameBoard[8]
+  const leftColumn = gameBoard[0] + gameBoard[3] + gameBoard[6]
+  const midColumn = gameBoard[1] + gameBoard[4] + gameBoard[7]
+  const rightColumn = gameBoard[2] + gameBoard[5] + gameBoard[8]
+  const slash = gameBoard[2] + gameBoard[4] + gameBoard[6]
+  const backSlash = gameBoard[0] + gameBoard[4] + gameBoard[8]
+  if (topRow === 3) {
+    console.log('Player 1 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+  }
+  if (topRow === -3) {
+    console.log('Player 2 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+  }
+  if (midRow === 3) {
+    console.log('Player 1 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+  }
+  if (midRow === -3) {
+    console.log('Player 2 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+  }
+  if (bottomRow === 3) {
+    console.log('Player 1 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+  }
+  if (bottomRow === -3) {
+    console.log('Player 2 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+  }
+  if (leftColumn === 3) {
+    console.log('Player 1 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+  }
+  if (leftColumn === -3) {
+    console.log('Player 2 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+  }
+  if (midColumn === 3) {
+    console.log('Player 1 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+  }
+  if (midColumn === -3) {
+    console.log('Player 2 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+  }
+  if (rightColumn === 3) {
+    console.log('Player 1 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+  }
+  if (rightColumn === -3) {
+    console.log('Player 2 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+  }
+  if (slash === 3) {
+    console.log('Player 1 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+  }
+  if (slash === -3) {
+    console.log('Player 2 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+  }
+  if (backSlash === 3) {
+    console.log('Player 1 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+  }
+  if (backSlash === -3) {
+    console.log('Player 2 is the winner!')
+    fillBoard(gameBoard)
+    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+  }
+  console.log('Checking for a tie and the game board is ', gameBoard)
+  tieCheck = []
+  for (let i = 0; i < 9; i++) {
+    if (gameBoard[i] === 1) {
+      tieCheck.push(1)
+    }
+    if (gameBoard[i] === -1) {
+      tieCheck.push(1)
+    }
+  }
+  console.log('Tie check is ', tieCheck, 'and the length is ', tieCheck.length)
+  if (tieCheck.length === 9) {
+    document.getElementsByClassName('status')[0].innerHTML = 'Tie Game!'
+  }
+}
+
 const togglePlayer = function (param) {
   console.log('Inside toggle player and initial active player is: ', activePlayer)
   if (param === 1) {
@@ -32,6 +156,7 @@ const togglePlayer = function (param) {
   } else {
     activePlayer = 1
   }
+  document.getElementsByClassName('status')[0].innerHTML = 'Current move: Player ' + activePlayer
   console.log('End of toggle player and resulting active player is: ', activePlayer)
 }
 
@@ -201,7 +326,7 @@ const gamePlay = function (square) {
     }
     console.log('within game play function active player is: ', activePlayer)
     togglePlayer(activePlayer)
-    checkwinner.checkWinner(gameBoard)
+    checkWinner(gameBoard)
     console.log('at the end of the gamePlay function the active player is: ', activePlayer)
   } else {
     console.log('square is already occupied')
@@ -224,6 +349,14 @@ const addHandlers = () => {
   $('.seven').on('click', gamePlay7)
   $('.eight').on('click', gamePlay8)
 }
+
+// const fillBoard = function (array) {
+//   console.log('launching fillBoard')
+//   for (let i = 0; i === 8; i++) {
+//     if (array[i] === 0) {
+//       gameBoard[i] = 5
+//     }
+//   }
 
 module.exports = {
   addHandlers
