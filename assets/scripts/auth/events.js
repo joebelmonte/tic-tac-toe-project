@@ -2,7 +2,6 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
-// const checkwinner = require('./checkwinner')
 
 let gameBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 let activePlayer = 1
@@ -320,7 +319,6 @@ const gamePlay = function (square) {
   if (gameBoard[square] === 0) {
     if (activePlayer === 1) {
       gameBoard[square] = 1
-
     } else {
       gameBoard[square] = -1
     }
@@ -349,14 +347,6 @@ const addHandlers = () => {
   $('.seven').on('click', gamePlay7)
   $('.eight').on('click', gamePlay8)
 }
-
-// const fillBoard = function (array) {
-//   console.log('launching fillBoard')
-//   for (let i = 0; i === 8; i++) {
-//     if (array[i] === 0) {
-//       gameBoard[i] = 5
-//     }
-//   }
 
 module.exports = {
   addHandlers
