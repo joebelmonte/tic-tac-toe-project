@@ -1,8 +1,31 @@
 'use strict'
 
 const store = require('../store.js')
+const events = require('./events.js')
 
 let userGamesPlayed = 0
+
+// *************
+const autoSignInSuccess = (data) => {
+  console.log('Auto sign in successful!')
+  console.log(data)
+  store.user = data.user
+  console.log('Logging store.user here = ' + store.user)
+  $('#signOut').show()
+  $('#startGame').show()
+  $('#stats').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#change-password').show()
+  $('#LogInSuccess').modal('show')
+}
+
+const autoSignInFailure = (error) => {
+  console.log('Auto sign in failed!')
+  console.error(error)
+  $('#LogFailure').modal('show')
+}
+// *************
 
 const signUpSuccess = (data) => {
   console.log('Successful sign up!')
@@ -116,5 +139,7 @@ module.exports = {
   postGameFailure,
   getUserGamesSuccess,
   getUserGamesFailure,
-  userGamesPlayed
+  userGamesPlayed,
+  autoSignInSuccess,
+  autoSignInFailure
 }

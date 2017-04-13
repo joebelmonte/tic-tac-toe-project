@@ -23,6 +23,15 @@ const signIn = (data) => {
   })
 }
 
+const signInAuto = (data) => {
+  console.log('Entering Auto Sign-In and the data is ', data)
+  return $.ajax({
+    url: config.apiOrigin + '/sign-in',
+    method: 'POST',
+    data
+  })
+}
+
 const changePassword = (data) => {
   console.log('Inside changePassword, data is: ', data)
   return $.ajax({
@@ -88,5 +97,6 @@ module.exports = {
   signOut,
   postGame,
   patchGame,
-  getUserGames
+  getUserGames,
+  signInAuto
 }

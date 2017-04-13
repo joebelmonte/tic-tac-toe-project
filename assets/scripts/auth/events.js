@@ -1,4 +1,5 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
+const getFormFields2 = require(`../../../lib/get-form-fields2`)
 
 const api = require('./api')
 const ui = require('./ui')
@@ -275,6 +276,11 @@ const onSignUp = function (event) {
   event.preventDefault()
   api.signUp(data)
     .then(ui.signUpSuccess)
+    .then(() => {
+      api.signInAuto(data)
+        .then(ui.autoSignInSuccess)
+        .catch(ui.autoSignInFailure)
+    })
     .catch(ui.signUpFailure)
 }
 
