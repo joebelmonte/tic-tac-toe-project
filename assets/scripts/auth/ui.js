@@ -7,12 +7,14 @@ let userGamesPlayed = 0
 const signUpSuccess = (data) => {
   console.log('Successful sign up!')
   console.log(data)
-  $('#sign-up').hide()
+  // $('#sign-up').hide()
+  $('#AccountCreationSuccess').modal('show')
 }
 
 const signUpFailure = (error) => {
   console.log('Sign up failure!')
   console.error(error)
+  $('#AccountCreationFailure').modal('show')
 }
 
 const signInSuccess = (data) => {
