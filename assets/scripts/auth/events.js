@@ -59,82 +59,177 @@ const checkWinner = function (gameBoard) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
-    // api.patchGame()
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (topRow === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
   }
+  const forPatch = {
+    "game": {
+      "over": true
+    }
+  }
+  api.patchGame(forPatch)
   if (midRow === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (midRow === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (bottomRow === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (bottomRow === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (leftColumn === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (leftColumn === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (midColumn === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (midColumn === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (rightColumn === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (rightColumn === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (slash === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (slash === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (backSlash === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   if (backSlash === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
   console.log('Checking for a tie and the game board is ', gameBoard)
   tieCheck = []
@@ -149,6 +244,12 @@ const checkWinner = function (gameBoard) {
   console.log('Tie check is ', tieCheck, 'and the length is ', tieCheck.length)
   if (tieCheck.length === 9) {
     document.getElementsByClassName('status')[0].innerHTML = 'Tie Game!'
+    const forPatch = {
+      "game": {
+        "over": true
+      }
+    }
+    api.patchGame(forPatch)
   }
 }
 
@@ -531,6 +632,7 @@ const addHandlers = () => {
   $('.six').on('click', gamePlay6)
   $('.seven').on('click', gamePlay7)
   $('.eight').on('click', gamePlay8)
+  // $('#stats').on('click', getStats)
 }
 
 module.exports = {
