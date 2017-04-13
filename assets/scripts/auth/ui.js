@@ -27,21 +27,26 @@ const signInSuccess = (data) => {
   $('#stats').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
+  $('#change-password').show()
+  $('#LogInSuccess').modal('show')
 }
 
 const signInFailure = (error) => {
   console.log('Incorrect password - Sign in failure!')
   console.error(error)
+  $('#LogFailure').modal('show')
 }
 
 const changePasswordSuccess = (data) => {
   console.log('Password changed successfully.')
   console.log(data)
+  $('#passWordChangeSuccess').modal('show')
 }
 
 const changePasswordFailure = (data) => {
   console.log('Password change FAILURE.')
   console.log(data)
+  $('#passWordChangeFailure').modal('show')
 }
 
 const signOutSuccess = (data) => {
@@ -58,6 +63,7 @@ const signOutSuccess = (data) => {
   $('.userStats').hide()
   $('#board').hide()
   $('.status').hide()
+  $('#signOutSuccess').modal('show')
 }
 
 const signOutFailure = (data) => {
