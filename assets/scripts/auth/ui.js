@@ -17,7 +17,7 @@ const autoSignInSuccess = (data) => {
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#change-password').show()
-  $('#LogInSuccess').modal('show')
+  // $('#LogInSuccess').modal('show')
 }
 
 const autoSignInFailure = (error) => {
