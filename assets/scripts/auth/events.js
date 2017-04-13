@@ -65,7 +65,7 @@ const checkWinner = function (gameBoard) {
   if (topRow === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    $('.status').text('Player 1 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -76,7 +76,7 @@ const checkWinner = function (gameBoard) {
   if (topRow === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    $('.status').text('Player 2 is the winner!')
   }
   const forPatch = {
     "game": {
@@ -87,7 +87,7 @@ const checkWinner = function (gameBoard) {
   if (midRow === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    $('.status').text('Player 1 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -98,7 +98,7 @@ const checkWinner = function (gameBoard) {
   if (midRow === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    $('.status').text('Player 2 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -109,7 +109,7 @@ const checkWinner = function (gameBoard) {
   if (bottomRow === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    $('.status').text('Player 1 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -120,7 +120,7 @@ const checkWinner = function (gameBoard) {
   if (bottomRow === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    $('.status').text('Player 2 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -131,7 +131,7 @@ const checkWinner = function (gameBoard) {
   if (leftColumn === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    $('.status').text('Player 1 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -142,7 +142,7 @@ const checkWinner = function (gameBoard) {
   if (leftColumn === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    $('.status').text('Player 2 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -153,7 +153,7 @@ const checkWinner = function (gameBoard) {
   if (midColumn === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    $('.status').text('Player 1 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -164,7 +164,7 @@ const checkWinner = function (gameBoard) {
   if (midColumn === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    $('.status').text('Player 2 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -175,7 +175,7 @@ const checkWinner = function (gameBoard) {
   if (rightColumn === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    $('.status').text('Player 1 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -186,7 +186,7 @@ const checkWinner = function (gameBoard) {
   if (rightColumn === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    $('.status').text('Player 2 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -197,7 +197,7 @@ const checkWinner = function (gameBoard) {
   if (slash === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    $('.status').text('Player 1 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -208,7 +208,7 @@ const checkWinner = function (gameBoard) {
   if (slash === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    $('.status').text('Player 2 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -219,7 +219,7 @@ const checkWinner = function (gameBoard) {
   if (backSlash === 3) {
     console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 1 is the winner!'
+    $('.status').text('Player 1 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -230,7 +230,7 @@ const checkWinner = function (gameBoard) {
   if (backSlash === -3) {
     console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
-    document.getElementsByClassName('status')[0].innerHTML = 'Player 2 is the winner!'
+    $('.status').text('Player 2 is the winner!')
     const forPatch = {
       "game": {
         "over": true
@@ -250,7 +250,7 @@ const checkWinner = function (gameBoard) {
   }
   console.log('Tie check is ', tieCheck, 'and the length is ', tieCheck.length)
   if (tieCheck.length === 9) {
-    document.getElementsByClassName('status')[0].innerHTML = 'Tie Game!'
+    $('.status').text('Tie Game!')
     const forPatch = {
       "game": {
         "over": true
@@ -267,7 +267,7 @@ const togglePlayer = function (param) {
   } else {
     activePlayer = 1
   }
-  document.getElementsByClassName('status')[0].innerHTML = 'Current move: Player ' + activePlayer
+  $('.status').text('Current move: Player ' + activePlayer)
   console.log('End of toggle player and resulting active player is: ', activePlayer)
 }
 
@@ -318,7 +318,7 @@ const gamePlay0 = function () {
   console.log('The game board here is: ', gameBoard)
   if (gameBoard[0] === 0) {
     if (activePlayer === 1) {
-      document.getElementsByClassName('zero')[0].innerHTML = 'X'
+      $('.zero').text('X')
       const forPatch = {
         "game": {
           "cell": {
@@ -330,7 +330,7 @@ const gamePlay0 = function () {
       }
       api.patchGame(forPatch)
     } else {
-      document.getElementsByClassName('zero')[0].innerHTML = 'O'
+      $('.zero').text('O')
       const forPatch = {
         "game": {
           "cell": {
@@ -351,7 +351,7 @@ const gamePlay1 = function () {
   console.log('The current active player is: ', activePlayer)
   if (gameBoard[1] === 0) {
     if (activePlayer === 1) {
-      document.getElementsByClassName('one')[0].innerHTML = 'X'
+      $('.one').text('X')
       const forPatch = {
         "game": {
           "cell": {
@@ -363,7 +363,7 @@ const gamePlay1 = function () {
       }
       api.patchGame(forPatch)
     } else {
-      document.getElementsByClassName('one')[0].innerHTML = 'O'
+      $('.one').text('O')
       const forPatch = {
         "game": {
           "cell": {
@@ -384,7 +384,7 @@ const gamePlay2 = function () {
   console.log('The current active player is: ', activePlayer)
   if (gameBoard[2] === 0) {
     if (activePlayer === 1) {
-      document.getElementsByClassName('two')[0].innerHTML = 'X'
+      $('.two').text('X')
       const forPatch = {
         "game": {
           "cell": {
@@ -396,7 +396,7 @@ const gamePlay2 = function () {
       }
       api.patchGame(forPatch)
     } else {
-      document.getElementsByClassName('two')[0].innerHTML = 'O'
+      $('.two').text('O')
       const forPatch = {
         "game": {
           "cell": {
@@ -417,7 +417,7 @@ const gamePlay3 = function () {
   console.log('The current active player is: ', activePlayer)
   if (gameBoard[3] === 0) {
     if (activePlayer === 1) {
-      document.getElementsByClassName('three')[0].innerHTML = 'X'
+      $('.three').text('X')
       const forPatch = {
         "game": {
           "cell": {
@@ -429,7 +429,7 @@ const gamePlay3 = function () {
       }
       api.patchGame(forPatch)
     } else {
-      document.getElementsByClassName('three')[0].innerHTML = 'O'
+      $('.three').text('O')
       const forPatch = {
         "game": {
           "cell": {
@@ -450,7 +450,7 @@ const gamePlay4 = function () {
   console.log('The current active player is: ', activePlayer)
   if (gameBoard[4] === 0) {
     if (activePlayer === 1) {
-      document.getElementsByClassName('four')[0].innerHTML = 'X'
+      $('.four').text('X')
       const forPatch = {
         "game": {
           "cell": {
@@ -462,7 +462,7 @@ const gamePlay4 = function () {
       }
       api.patchGame(forPatch)
     } else {
-      document.getElementsByClassName('four')[0].innerHTML = 'O'
+      $('.four').text('O')
       const forPatch = {
         "game": {
           "cell": {
@@ -483,7 +483,7 @@ const gamePlay5 = function () {
   console.log('The current active player is: ', activePlayer)
   if (gameBoard[5] === 0) {
     if (activePlayer === 1) {
-      document.getElementsByClassName('five')[0].innerHTML = 'X'
+      $('.five').text('X')
       const forPatch = {
         "game": {
           "cell": {
@@ -495,7 +495,7 @@ const gamePlay5 = function () {
       }
       api.patchGame(forPatch)
     } else {
-      document.getElementsByClassName('five')[0].innerHTML = 'O'
+      $('.five').text('O')
       const forPatch = {
         "game": {
           "cell": {
@@ -516,7 +516,7 @@ const gamePlay6 = function () {
   console.log('The current active player is: ', activePlayer)
   if (gameBoard[6] === 0) {
     if (activePlayer === 1) {
-      document.getElementsByClassName('six')[0].innerHTML = 'X'
+      $('.six').text('X')
       const forPatch = {
         "game": {
           "cell": {
@@ -528,7 +528,7 @@ const gamePlay6 = function () {
       }
       api.patchGame(forPatch)
     } else {
-      document.getElementsByClassName('six')[0].innerHTML = 'O'
+      $('.six').text('O')
       const forPatch = {
         "game": {
           "cell": {
@@ -549,7 +549,7 @@ const gamePlay7 = function () {
   console.log('The current active player is: ', activePlayer)
   if (gameBoard[7] === 0) {
     if (activePlayer === 1) {
-      document.getElementsByClassName('seven')[0].innerHTML = 'X'
+      $('.seven').text('X')
       const forPatch = {
         "game": {
           "cell": {
@@ -561,7 +561,7 @@ const gamePlay7 = function () {
       }
       api.patchGame(forPatch)
     } else {
-      document.getElementsByClassName('seven')[0].innerHTML = 'O'
+      $('.seven').text('O')
       const forPatch = {
         "game": {
           "cell": {
@@ -582,7 +582,7 @@ const gamePlay8 = function () {
   console.log('The current active player is: ', activePlayer)
   if (gameBoard[8] === 0) {
     if (activePlayer === 1) {
-      document.getElementsByClassName('eight')[0].innerHTML = 'X'
+      $('.eight').text('X')
       const forPatch = {
         "game": {
           "cell": {
@@ -594,7 +594,7 @@ const gamePlay8 = function () {
       }
       api.patchGame(forPatch)
     } else {
-      document.getElementsByClassName('eight')[0].innerHTML = 'O'
+      $('.eight').text('O')
       const forPatch = {
         "game": {
           "cell": {
