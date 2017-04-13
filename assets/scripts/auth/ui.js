@@ -60,6 +60,19 @@ const postGameFailure = (error) => {
   console.error(error)
 }
 
+const getUserGamesSuccess = (data) => {
+  console.log('Entering getUserGamesSuccess!')
+  console.log('Logging data here: ' + data)
+  store.games = data.games
+  console.log('Logging userGames here: ' + store.games)
+  console.log(store.games.length)
+}
+
+const getUserGamesFailure = (error) => {
+  console.log('Get user games failure!')
+  console.error(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -70,5 +83,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   postGameSuccess,
-  postGameFailure
+  postGameFailure,
+  getUserGamesSuccess,
+  getUserGamesFailure
 }

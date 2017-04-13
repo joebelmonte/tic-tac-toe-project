@@ -617,6 +617,15 @@ const gamePlay = function (square) {
   }
 }
 
+const getStats = function (event) {
+  event.preventDefault()
+  console.log('Inside getStats')
+  api.getUserGames()
+    .then(ui.getUserGamesSuccess)
+    .catch(ui.getUserGamesFailure)
+  console.log('finished getStats')
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -632,7 +641,7 @@ const addHandlers = () => {
   $('.six').on('click', gamePlay6)
   $('.seven').on('click', gamePlay7)
   $('.eight').on('click', gamePlay8)
-  // $('#stats').on('click', getStats)
+  $('#stats').on('click', getStats)
 }
 
 module.exports = {

@@ -70,11 +70,23 @@ const patchGame = (forPatch) => {
   })
 }
 
+const getUserGames = () => {
+  console.log('inside getUserGames')
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   postGame,
-  patchGame
+  patchGame,
+  getUserGames
 }
