@@ -7,6 +7,7 @@ let userGamesPlayed = 0
 const signUpSuccess = (data) => {
   console.log('Successful sign up!')
   console.log(data)
+  $('#sign-up').hide()
 }
 
 const signUpFailure = (error) => {
@@ -19,6 +20,11 @@ const signInSuccess = (data) => {
   console.log(data)
   store.user = data.user
   console.log('Logging store.user here = ' + store.user)
+  $('#signOut').show()
+  $('#startGame').show()
+  $('#stats').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
 }
 
 const signInFailure = (error) => {
@@ -42,11 +48,21 @@ const signOutSuccess = (data) => {
   console.log(data)
   store.user = null
   console.log('User data after delete is: ', store.user)
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('#signOut').hide()
+  $('#startGame').hide()
+  $('#stats').hide()
+  $('.userStats').hide()
+  $('#board').hide()
+  $('.status').hide()
 }
 
 const signOutFailure = (data) => {
   console.log('Signed out FAILURE.')
   console.log(data)
+  $('#sign-up').show()
+  $('#sign-in').show()
 }
 
 const postGameSuccess = (data) => {
@@ -71,6 +87,7 @@ const getUserGamesSuccess = (data) => {
   userGamesPlayed = store.games.length
   console.log('userGamesPlayed from within getUserGamesSuccess is: ', userGamesPlayed)
   $('.userStats').text('You have played ' + store.games.length + ' games!')
+  $('.userStats').show()
 }
 
 const getUserGamesFailure = (error) => {

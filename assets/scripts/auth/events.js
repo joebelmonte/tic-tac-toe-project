@@ -13,6 +13,8 @@ let userStats = {
 
 const startGame = function () {
   event.preventDefault()
+  $('#board').show()
+  $('.userStats').hide()
   console.log('start game function initialized!')
   gameBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0]
   activePlayer = 1

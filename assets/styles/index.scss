@@ -13,7 +13,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   table {
     margin: auto;
   }
-  // display: none;
+  display: none;
 }
 
 .square{
@@ -36,10 +36,26 @@ p{
   // display: none;
 }
 
-#signOut{
-  // display: none;
-}
-
 .userStats{
   margin-top: 10px;
+}
+
+#change-password{
+  display: none;
+}
+
+#signOut{
+  display: none;
+}
+
+#startGame{
+  display: none;
+}
+
+#stats{
+  display: none;
+}
+
+.status{
+  display: none;
 }
