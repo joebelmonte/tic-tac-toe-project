@@ -2,6 +2,8 @@
 
 const store = require('../store.js')
 
+let userGamesPlayed = 0
+
 const signUpSuccess = (data) => {
   console.log('Successful sign up!')
   console.log(data)
@@ -66,6 +68,9 @@ const getUserGamesSuccess = (data) => {
   store.games = data.games
   console.log('Logging userGames here: ' + store.games)
   console.log(store.games.length)
+  userGamesPlayed = store.games.length
+  console.log('userGamesPlayed from within getUserGamesSuccess is: ', userGamesPlayed)
+  $('.userStats').text('You have played ' + store.games.length + ' games!')
 }
 
 const getUserGamesFailure = (error) => {
@@ -85,5 +90,6 @@ module.exports = {
   postGameSuccess,
   postGameFailure,
   getUserGamesSuccess,
-  getUserGamesFailure
+  getUserGamesFailure,
+  userGamesPlayed
 }

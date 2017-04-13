@@ -13,13 +13,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   table {
     margin: auto;
   }
-  // background-color: blue;
+  // display: none;
 }
 
 .square{
     width: 200px;
     height: 200px;
-    // padding: 20px;
 }
 
 .v{
@@ -34,4 +33,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 p{
   font-size: 30px;
+  // display: none;
+}
+
+#signOut{
+  // display: none;
+}
+
+.userStats{
+  margin-top: 10px;
 }

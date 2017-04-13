@@ -2,10 +2,14 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store.js')
 
 let gameBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 let activePlayer = 1
 let tieCheck = []
+let userStats = {
+  games: 0
+}
 
 const startGame = function () {
   event.preventDefault()
@@ -16,16 +20,16 @@ const startGame = function () {
   api.postGame()
     .then(ui.postGameSuccess)
     .catch(ui.postGameFailure)
-  document.getElementsByClassName('status')[0].innerHTML = 'Current move: Player 1'
-  document.getElementsByClassName('zero')[0].innerHTML = ''
-  document.getElementsByClassName('one')[0].innerHTML = ''
-  document.getElementsByClassName('two')[0].innerHTML = ''
-  document.getElementsByClassName('three')[0].innerHTML = ''
-  document.getElementsByClassName('four')[0].innerHTML = ''
-  document.getElementsByClassName('five')[0].innerHTML = ''
-  document.getElementsByClassName('six')[0].innerHTML = ''
-  document.getElementsByClassName('seven')[0].innerHTML = ''
-  document.getElementsByClassName('eight')[0].innerHTML = ''
+  $('.status').text('Current move: Player 1')
+  $('.zero').text('')
+  $('.one').text('')
+  $('.two').text('')
+  $('.three').text('')
+  $('.four').text('')
+  $('.five').text('')
+  $('.six').text('')
+  $('.seven').text('')
+  $('.eight').text('')
   console.log(gameBoard)
   console.log(activePlayer)
 }
@@ -623,6 +627,7 @@ const getStats = function (event) {
   api.getUserGames()
     .then(ui.getUserGamesSuccess)
     .catch(ui.getUserGamesFailure)
+  console.log('From within get stats, the number of user games is: ', ui.userGamesPlayed)
   console.log('finished getStats')
 }
 
@@ -632,6 +637,12 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#signOut').on('submit', signOut)
   $('#startGame').on('submit', startGame)
+  $('#startGame').on('click', function () {
+    $('#board').show()
+  })
+  $('#startGame').on('click', function () {
+    $('p').show()
+  })
   $('.zero').on('click', gamePlay0)
   $('.one').on('click', gamePlay1)
   $('.two').on('click', gamePlay2)
