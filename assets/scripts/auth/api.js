@@ -5,7 +5,6 @@ const store = require('../store.js')
 const events = require('./events.js')
 
 const signUp = (data) => {
-  console.log('We are at the signUp function passing through the following data: ', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',
@@ -14,8 +13,6 @@ const signUp = (data) => {
 }
 
 const signIn = (data) => {
-  console.log('Signing in with data of ', data)
-  console.log('testing gameBoard access: ', events.gameBoard)
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
@@ -24,7 +21,6 @@ const signIn = (data) => {
 }
 
 const signInAuto = (data) => {
-  console.log('Entering Auto Sign-In and the data is ', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
@@ -33,7 +29,6 @@ const signInAuto = (data) => {
 }
 
 const changePassword = (data) => {
-  console.log('Inside changePassword, data is: ', data)
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
@@ -45,7 +40,6 @@ const changePassword = (data) => {
 }
 
 const signOut = (data) => {
-  console.log('inside signOut, data is: ', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',
@@ -56,7 +50,6 @@ const signOut = (data) => {
 }
 
 const postGame = () => {
-  console.log('inside postGame')
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
@@ -67,8 +60,6 @@ const postGame = () => {
 }
 
 const patchGame = (forPatch) => {
-  console.log('inside patchGame')
-  console.log('forPatch is equal to: ', forPatch)
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
@@ -80,7 +71,6 @@ const patchGame = (forPatch) => {
 }
 
 const getUserGames = () => {
-  console.log('inside getUserGames')
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'GET',

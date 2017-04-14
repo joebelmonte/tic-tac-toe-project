@@ -16,7 +16,6 @@ const startGame = function () {
   event.preventDefault()
   $('#board').show()
   $('.userStats').hide()
-  console.log('start game function initialized!')
   gameBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0]
   activePlayer = 1
   tieCheck = []
@@ -33,27 +32,18 @@ const startGame = function () {
   $('.six').text('')
   $('.seven').text('')
   $('.eight').text('')
-  console.log(gameBoard)
-  console.log(activePlayer)
 }
 
 const fillBoard = function (array) {
-  console.log('launching fillBoard')
-  console.log('the value of the array is: ', array)
-  console.log('the value of game board is:', gameBoard)
   for (let i = 0; i < 9; i++) {
     if (array[i] === 0) {
       gameBoard[i] = 5
       array[i] = 5
     }
   }
-  console.log('ending fillBoard')
-  console.log('the value of the array is: ', array)
-  console.log('the value of game board is:', gameBoard)
 }
 
 const checkWinner = function (gameBoard) {
-  console.log('Checking for a winner using game board: ', gameBoard)
   const topRow = gameBoard[0] + gameBoard[1] + gameBoard[2]
   const midRow = gameBoard[3] + gameBoard[4] + gameBoard[5]
   const bottomRow = gameBoard[6] + gameBoard[7] + gameBoard[8]
@@ -63,7 +53,6 @@ const checkWinner = function (gameBoard) {
   const slash = gameBoard[2] + gameBoard[4] + gameBoard[6]
   const backSlash = gameBoard[0] + gameBoard[4] + gameBoard[8]
   if (topRow === 3) {
-    console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 1 is the winner!')
     const forPatch = {
@@ -74,7 +63,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (topRow === -3) {
-    console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 2 is the winner!')
   }
@@ -85,7 +73,6 @@ const checkWinner = function (gameBoard) {
   }
   api.patchGame(forPatch)
   if (midRow === 3) {
-    console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 1 is the winner!')
     const forPatch = {
@@ -96,7 +83,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (midRow === -3) {
-    console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 2 is the winner!')
     const forPatch = {
@@ -107,7 +93,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (bottomRow === 3) {
-    console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 1 is the winner!')
     const forPatch = {
@@ -118,7 +103,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (bottomRow === -3) {
-    console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 2 is the winner!')
     const forPatch = {
@@ -129,7 +113,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (leftColumn === 3) {
-    console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 1 is the winner!')
     const forPatch = {
@@ -140,7 +123,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (leftColumn === -3) {
-    console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 2 is the winner!')
     const forPatch = {
@@ -151,7 +133,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (midColumn === 3) {
-    console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 1 is the winner!')
     const forPatch = {
@@ -162,7 +143,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (midColumn === -3) {
-    console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 2 is the winner!')
     const forPatch = {
@@ -173,7 +153,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (rightColumn === 3) {
-    console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 1 is the winner!')
     const forPatch = {
@@ -184,7 +163,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (rightColumn === -3) {
-    console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 2 is the winner!')
     const forPatch = {
@@ -195,7 +173,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (slash === 3) {
-    console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 1 is the winner!')
     const forPatch = {
@@ -206,7 +183,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (slash === -3) {
-    console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 2 is the winner!')
     const forPatch = {
@@ -217,7 +193,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (backSlash === 3) {
-    console.log('Player 1 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 1 is the winner!')
     const forPatch = {
@@ -228,7 +203,6 @@ const checkWinner = function (gameBoard) {
     api.patchGame(forPatch)
   }
   if (backSlash === -3) {
-    console.log('Player 2 is the winner!')
     fillBoard(gameBoard)
     $('.status').text('Player 2 is the winner!')
     const forPatch = {
@@ -238,7 +212,6 @@ const checkWinner = function (gameBoard) {
     }
     api.patchGame(forPatch)
   }
-  console.log('Checking for a tie and the game board is ', gameBoard)
   tieCheck = []
   for (let i = 0; i < 9; i++) {
     if (gameBoard[i] === 1) {
@@ -248,7 +221,6 @@ const checkWinner = function (gameBoard) {
       tieCheck.push(1)
     }
   }
-  console.log('Tie check is ', tieCheck, 'and the length is ', tieCheck.length)
   if (tieCheck.length === 9) {
     $('.status').text('Tie Game!')
     const forPatch = {
@@ -261,14 +233,12 @@ const checkWinner = function (gameBoard) {
 }
 
 const togglePlayer = function (param) {
-  console.log('Inside toggle player and initial active player is: ', activePlayer)
   if (param === 1) {
     activePlayer = 2
   } else {
     activePlayer = 1
   }
   $('.status').text('Current move: Player ' + activePlayer)
-  console.log('End of toggle player and resulting active player is: ', activePlayer)
 }
 
 const onSignUp = function (event) {
@@ -286,8 +256,6 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   const data = getFormFields(this)
-  console.log('onSignIn ran!')
-  console.log('and the data is: ', data)
   event.preventDefault()
   api.signIn(data)
     .then(ui.signInSuccess)
@@ -296,7 +264,6 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('Change password event detected.')
   const data = getFormFields(event.target)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
@@ -305,7 +272,6 @@ const onChangePassword = function (event) {
 
 const signOut = function (event) {
   event.preventDefault()
-  console.log('Sign out event detected.')
   const data = getFormFields(event.target)
   api.signOut(data)
     .then(ui.signOutSuccess)
@@ -313,9 +279,6 @@ const signOut = function (event) {
 }
 
 const gamePlay0 = function () {
-  console.log('Calling gamePlay 0 function')
-  console.log('The current active player is: ', activePlayer)
-  console.log('The game board here is: ', gameBoard)
   if (gameBoard[0] === 0) {
     if (activePlayer === 1) {
       $('.zero').text('X')
@@ -347,8 +310,6 @@ const gamePlay0 = function () {
 }
 
 const gamePlay1 = function () {
-  console.log('Calling gamePlay 1 function')
-  console.log('The current active player is: ', activePlayer)
   if (gameBoard[1] === 0) {
     if (activePlayer === 1) {
       $('.one').text('X')
@@ -380,8 +341,6 @@ const gamePlay1 = function () {
 }
 
 const gamePlay2 = function () {
-  console.log('Calling gamePlay 2 function')
-  console.log('The current active player is: ', activePlayer)
   if (gameBoard[2] === 0) {
     if (activePlayer === 1) {
       $('.two').text('X')
@@ -413,8 +372,6 @@ const gamePlay2 = function () {
 }
 
 const gamePlay3 = function () {
-  console.log('Calling gamePlay 3 function')
-  console.log('The current active player is: ', activePlayer)
   if (gameBoard[3] === 0) {
     if (activePlayer === 1) {
       $('.three').text('X')
@@ -446,8 +403,6 @@ const gamePlay3 = function () {
 }
 
 const gamePlay4 = function () {
-  console.log('Calling gamePlay 4 function')
-  console.log('The current active player is: ', activePlayer)
   if (gameBoard[4] === 0) {
     if (activePlayer === 1) {
       $('.four').text('X')
@@ -479,8 +434,6 @@ const gamePlay4 = function () {
 }
 
 const gamePlay5 = function () {
-  console.log('Calling gamePlay 5 function')
-  console.log('The current active player is: ', activePlayer)
   if (gameBoard[5] === 0) {
     if (activePlayer === 1) {
       $('.five').text('X')
@@ -512,8 +465,6 @@ const gamePlay5 = function () {
 }
 
 const gamePlay6 = function () {
-  console.log('Calling gamePlay 6 function')
-  console.log('The current active player is: ', activePlayer)
   if (gameBoard[6] === 0) {
     if (activePlayer === 1) {
       $('.six').text('X')
@@ -545,8 +496,6 @@ const gamePlay6 = function () {
 }
 
 const gamePlay7 = function () {
-  console.log('Calling gamePlay 7 function')
-  console.log('The current active player is: ', activePlayer)
   if (gameBoard[7] === 0) {
     if (activePlayer === 1) {
       $('.seven').text('X')
@@ -578,8 +527,6 @@ const gamePlay7 = function () {
 }
 
 const gamePlay8 = function () {
-  console.log('Calling gamePlay 8 function')
-  console.log('The current active player is: ', activePlayer)
   if (gameBoard[8] === 0) {
     if (activePlayer === 1) {
       $('.eight').text('X')
@@ -611,32 +558,23 @@ const gamePlay8 = function () {
 }
 
 const gamePlay = function (square) {
-  // event.preventDefault()
-  console.log('Game play was initialized and the event is: ', event)
-  console.log('Game board square 0 value is: ', gameBoard[square])
   if (gameBoard[square] === 0) {
     if (activePlayer === 1) {
       gameBoard[square] = 1
     } else {
       gameBoard[square] = -1
     }
-    console.log('within game play function active player is: ', activePlayer)
     togglePlayer(activePlayer)
     checkWinner(gameBoard)
-    console.log('at the end of the gamePlay function the active player is: ', activePlayer)
   } else {
-    console.log('square is already occupied')
   }
 }
 
 const getStats = function (event) {
   event.preventDefault()
-  console.log('Inside getStats')
   api.getUserGames()
     .then(ui.getUserGamesSuccess)
     .catch(ui.getUserGamesFailure)
-  console.log('From within get stats, the number of user games is: ', ui.userGamesPlayed)
-  console.log('finished getStats')
 }
 
 const addHandlers = () => {
