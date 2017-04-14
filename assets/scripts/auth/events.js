@@ -61,17 +61,20 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (topRow === -3) {
     fillBoard(gameBoard)
     $('.status').text('Player 2 is the winner!')
-  }
-  const forPatch = {
-    "game": {
-      "over": true
+    const forPatch = {
+      "game": {
+        "over": true
+      }
     }
+    api.patchGame(forPatch)
+    return
   }
-  api.patchGame(forPatch)
+
   if (midRow === 3) {
     fillBoard(gameBoard)
     $('.status').text('Player 1 is the winner!')
@@ -81,6 +84,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (midRow === -3) {
     fillBoard(gameBoard)
@@ -91,6 +95,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (bottomRow === 3) {
     fillBoard(gameBoard)
@@ -101,6 +106,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (bottomRow === -3) {
     fillBoard(gameBoard)
@@ -111,6 +117,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (leftColumn === 3) {
     fillBoard(gameBoard)
@@ -121,6 +128,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (leftColumn === -3) {
     fillBoard(gameBoard)
@@ -131,6 +139,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (midColumn === 3) {
     fillBoard(gameBoard)
@@ -141,6 +150,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (midColumn === -3) {
     fillBoard(gameBoard)
@@ -151,6 +161,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (rightColumn === 3) {
     fillBoard(gameBoard)
@@ -161,6 +172,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (rightColumn === -3) {
     fillBoard(gameBoard)
@@ -171,6 +183,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (slash === 3) {
     fillBoard(gameBoard)
@@ -181,6 +194,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (slash === -3) {
     fillBoard(gameBoard)
@@ -191,6 +205,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (backSlash === 3) {
     fillBoard(gameBoard)
@@ -201,6 +216,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   if (backSlash === -3) {
     fillBoard(gameBoard)
@@ -211,6 +227,7 @@ const checkWinner = function (gameBoard) {
       }
     }
     api.patchGame(forPatch)
+    return
   }
   tieCheck = []
   for (let i = 0; i < 9; i++) {
