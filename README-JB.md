@@ -99,7 +99,7 @@ Behind the scenes:
 of mock ups that I drew before I started, although they were quickly abandoned
 for the sake of expediency.
 
-- [Mockups] (http://imgur.com/SIeOPd0/s)
+- [Mockups] (http://imgur.com/SIeOPd0/)
 
 
 * Here are my user stories, but since Tic Tac Toe is pretty simple they aren't too
